@@ -1,0 +1,111 @@
+{
+  "agents": {
+    "defaults": {
+      "workspace": "/Users/atharva/.openclaw/workspace",
+      "model": {
+        "primary": "custom-zenmux-ai/sapiens-ai/agnes-1.5-pro"
+      },
+      "models": {
+        "custom-zenmux-ai/sapiens-ai/agnes-1.5-pro": {}
+      },
+      "compaction": {
+        "reserveTokensFloor": 20000
+      }
+    }
+  },
+  "gateway": {
+    "mode": "local",
+    "auth": {
+      "mode": "token",
+      "token": "9bb0b640bc1c48f3e652ee5d60973cf5e5612e8d806aa74f"
+    },
+    "port": 18789,
+    "bind": "loopback",
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    },
+    "controlUi": {
+      "allowInsecureAuth": true
+    },
+    "nodes": {
+      "denyCommands": [
+        "camera.snap",
+        "camera.clip",
+        "screen.record",
+        "contacts.add",
+        "calendar.add",
+        "reminders.add",
+        "sms.send",
+        "sms.search"
+      ]
+    }
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  },
+  "tools": {
+    "profile": "coding",
+    "web": {
+      "search": {
+        "provider": "duckduckgo",
+        "enabled": true
+      }
+    }
+  },
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "custom-zenmux-ai": {
+        "baseUrl": "https://zenmux.ai/api/v1",
+        "api": "openai-completions",
+        "apiKey": "sk-ai-v1-b975c26b2352ca30ebcd73a22129d18de0bbf54ed0c6bef07fe959234e6855f6",
+        "models": [
+          {
+            "id": "sapiens-ai/agnes-1.5-pro",
+            "name": "sapiens-ai/agnes-1.5-pro (Custom Provider)",
+            "contextWindow": 16000,
+            "maxTokens": 4096,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "reasoning": false
+          }
+        ]
+      }
+    }
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "botToken": "8609718271:AAFxsS617xLomBtqQkhfkidUfLaorGB_KCA",
+      "dmPolicy": "open",
+      "allowFrom": [
+        "*"
+      ]
+    }
+  },
+  "plugins": {
+    "entries": {
+      "duckduckgo": {
+        "enabled": true
+      }
+    }
+  },
+  "wizard": {
+    "lastRunAt": "2026-04-05T03:55:30.858Z",
+    "lastRunVersion": "2026.4.2",
+    "lastRunCommand": "onboard",
+    "lastRunMode": "local"
+  },
+  "meta": {
+    "lastTouchedVersion": "2026.4.2",
+    "lastTouchedAt": "2026-04-05T03:55:30.950Z"
+  }
+}
